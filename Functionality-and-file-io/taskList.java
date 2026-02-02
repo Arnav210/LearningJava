@@ -3,12 +3,10 @@ import java.util.ArrayList;
 public class taskList {
 
     String name;
-    String day;
     ArrayList<String> tasks;
 
     public taskList(String name, String day) {
         this.name = name;
-        this.day = day;
         this.tasks = new ArrayList<>();
     }
 
