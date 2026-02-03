@@ -33,7 +33,23 @@ public class taskList {
     }
 
     void markDone(int taskNum) {
-        tasks.set(taskNum - 1, tasks.get(taskNum - 1) + " \u2713");
+        String lastChar = tasks.get(taskNum - 1);
+        if (lastChar.endsWith("\u2713")) {
+            System.out.println("That is already marked as done");
+        } else {
+            tasks.set(taskNum - 1, tasks.get(taskNum - 1) + " \u2713");
+        }
+    }
+
+    void unmarkDone(int taskNum) {
+        String lastChar2 = tasks.get(taskNum - 1);
+        if (lastChar2.endsWith("\u2713")) {
+            lastChar2 = lastChar2.replace("\u2713", "");
+            lastChar2 = lastChar2.trim();
+            tasks.set(taskNum - 1, lastChar2);
+        } else {
+            System.out.println("That is not marked as done");
+        }
     }
 
     void sendToFile(String name) {

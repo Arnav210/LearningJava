@@ -38,6 +38,10 @@ public class Main {
                 int input3 = scanner.nextInt();
                 tasklist.markDone(input3);
             } else if (choice == 7) {
+                System.out.print("Task to ummark as done: ");
+                int input4 = scanner.nextInt();
+                tasklist.unmarkDone(input4);
+            } else if (choice == 8) {
                 tasklist.sendToFile(tasklist.name);
             }
         }
@@ -53,7 +57,8 @@ public class Main {
         System.out.println("4: View Task List");
         System.out.println("5: Close Program");
         System.out.println("6: Mark Task Done");
-        System.out.println("7: Create Text File");
+        System.out.println("7: Unmark Task Done");
+        System.out.println("8: Create Text File");
     }
 }
 
