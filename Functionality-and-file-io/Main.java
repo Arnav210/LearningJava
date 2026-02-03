@@ -10,33 +10,36 @@ public class Main {
         System.out.print("Enter the name of your task list: ");
         String name = scanner.nextLine();
 
-        System.out.print("Enter the day of the week the task list is for: ");
-        String day = scanner.nextLine();
-
-        taskList tasklist = new taskList(name, day);
+        taskList tasklist = new taskList(name);
 
         while(escape != true) {
 
-            System.out.print("Enter command number or enter 5 to view command list: ");
+            System.out.print("Enter command number or enter 1 to view command list: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
+
             if (choice == 1) {
+                Main.viewCommands();
+            } else if (choice == 2) {
                 System.out.print("Name of task to add: ");
                 String input1 = scanner.nextLine();
                 tasklist.addTask(input1);
-            } else if (choice == 2) {
+            } else if (choice == 3) {
                 System.out.print("Task to remove: ");
                 int input2 = scanner.nextInt();
                 tasklist.removeTask(input2);
-            } else if (choice == 3) {
-                tasklist.viewTasks();
             } else if (choice == 4) {
-                escape = true;
+                tasklist.viewTasks();
             } else if (choice == 5) {
-                Main.viewCommands();
+                escape = true;
+            } else if (choice == 6) {
+                System.out.print("Task to mark as done: ");
+                int input3 = scanner.nextInt();
+                tasklist.markDone(input3);
+            } else if (choice == 7) {
+                tasklist.sendToFile(tasklist.name);
             }
-
         }
 
         scanner.close();
@@ -45,11 +48,12 @@ public class Main {
     }
 
     static void viewCommands() {
-        System.out.println("1: Add Task");
-        System.out.println("2: Remove Task");
-        System.out.println("3: View Task List");
-        System.out.println("4: Close Program");
+        System.out.println("2: Add Task");
+        System.out.println("3: Remove Task");
+        System.out.println("4: View Task List");
+        System.out.println("5: Close Program");
+        System.out.println("6: Mark Task Done");
+        System.out.println("7: Create Text File");
     }
-
 }
 

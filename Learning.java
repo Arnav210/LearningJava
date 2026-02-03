@@ -262,3 +262,25 @@ public class Student {
 }
  */
 
+/*
+Writing Files
+
+FileWriter - small / medium sized files
+BufferedWriter - large sized files
+PrintWriter - structured data (reports / logs)
+FileOutputStream - binary files (images / audio)
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+FileWriter writer = new FileWriter("test.txt");
+
+try(FileWriter writer = new FileWriter("test.txt")) {
+    writer.write("I like pizza!");
+    System.out.println("File has been written");
+} catch(IOException e) {
+    System.out.println("Could not write file");
+} cath(FileNotFoundException e) {
+ System.out.println("Could not locate file location");
+}
+ */
