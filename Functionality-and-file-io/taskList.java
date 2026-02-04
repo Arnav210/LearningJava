@@ -20,7 +20,7 @@ public class taskList {
     void viewTasks() {
         System.out.println("-----------------------------------------------------------------");
         for(int i = 0; i < tasks.size(); i++) {
-            System.out.println(tasks.get(i));
+            System.out.println(i + 1 + ". " + tasks.get(i));
         }
         System.out.println("-----------------------------------------------------------------");
     }
@@ -56,7 +56,7 @@ public class taskList {
     void sendToFile(String name) {
         try(FileWriter writer = new FileWriter(name + ".txt")) {
             for(int i = 0; i < tasks.size(); i++) {
-                writer.write(i + 1 + ". " + tasks.get(i) +"\n");
+                writer.write(tasks.get(i) +"\n");
             }
         } catch (IOException e) {
             System.out.println("Error creating file: " + e.getMessage());
