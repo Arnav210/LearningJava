@@ -43,6 +43,10 @@ public class Main {
                 tasklist.unmarkDone(input4);
             } else if (choice == 8) {
                 tasklist.sendToFile(tasklist.name);
+            } else if (choice == 9) {
+                System.out.print("Name of file to import from (leave out ending): ");
+                String input5 = scanner.nextLine();
+                tasklist.importFromFile(input5);
             }
         }
 
@@ -59,6 +63,7 @@ public class Main {
         System.out.println("6: Mark Task Done");
         System.out.println("7: Unmark Task Done");
         System.out.println("8: Create Text File");
+        System.out.println("9: Import From Text File");
     }
 }
 

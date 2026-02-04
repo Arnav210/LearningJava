@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class taskList {
 
@@ -59,6 +60,19 @@ public class taskList {
             }
         } catch (IOException e) {
             System.out.println("Error creating file: " + e.getMessage());
+        }
+    }
+
+    void importFromFile(String name) {
+        File myObj = new File(name + ".txt");
+        try(Scanner scanner = new Scanner(myObj)) {
+            while(scanner.hasNextLine()) {
+                tasks.add(scanner.nextLine());
+            }
+            System.out.println("Successfully imported from file");
+        } catch(FileNotFoundException e) {
+            System.out.println("Unable to import from file");
+            e.printStackTrace();
         }
     }
 }
