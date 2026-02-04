@@ -20,7 +20,7 @@ public class taskList {
     void viewTasks() {
         System.out.println("-----------------------------------------------------------------");
         for(int i = 0; i < tasks.size(); i++) {
-            System.out.println(i + 1 + ". " + tasks.get(i));
+            System.out.println(tasks.get(i));
         }
         System.out.println("-----------------------------------------------------------------");
     }
